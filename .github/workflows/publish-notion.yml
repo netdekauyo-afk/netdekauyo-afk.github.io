@@ -78,10 +78,11 @@ jobs:
               '<!doctype html>\n<html lang="ja">\n<head>\n'
               '<meta charset="utf-8">\n'
               '<meta name="viewport" content="width=device-width,initial-scale=1">\n'
-              '<title>制作技術・知識一覧</title>\n</head>\n<body>\n'
+              "<meta name=\"color-scheme\" content=\"dark\">\n<meta name=\"theme-color\" content=\"#10151f\">\n<style>\n  :root { color-scheme: dark; }\n  * { box-sizing: border-box; }\n  body {\n    margin: 0; min-height: 100vh; padding: clamp(24px, 5vw, 64px) 20px;\n    background: #10151f; color: #e6edf3;\n    font-family: system-ui, -apple-system, \"Segoe UI\", \"Noto Sans JP\", sans-serif;\n    line-height: 1.7;\n  }\n  main { max-width: 880px; margin-inline: auto; }\n  h1 { margin: 0 0 28px; font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.4; }\n  ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }\n  li { margin: 0; }\n  a {\n    display: block; padding: 18px 20px; border: 1px solid #374456;\n    border-radius: 12px; background: #1a2330; color: #9dccff;\n    text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere;\n  }\n  a:visited { color: #c9b8ff; }\n  a:hover { background: #243247; border-color: #80b8f2; color: #c7e2ff; }\n  a:focus-visible { outline: 3px solid #80b8f2; outline-offset: 4px; }\n  @media (prefers-reduced-motion: no-preference) {\n    a { transition: background-color 120ms ease, border-color 120ms ease; }\n  }\n</style>\n"
+              '<title>制作技術・知識一覧</title>\n</head>\n<body>\n<main>\n'
               '<h1>制作技術・知識一覧</h1>\n<ul>\n'
               + "\n".join(items)
-              + '\n</ul>\n</body>\n</html>\n'
+              + '\n</ul>\n</main>\n</body>\n</html>\n'
           )
           Path("site").mkdir(exist_ok=True)
           Path("site/index.html").write_text(output, encoding="utf-8")
