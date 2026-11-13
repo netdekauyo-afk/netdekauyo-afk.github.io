@@ -6,9 +6,6 @@ on:
     branches: [main]
     paths:
       - .github/workflows/publish-notion.yml
-  # UTC every 3 hours is also 00:17, 03:17, ... in Japan (UTC+9).
-  schedule:
-    - cron: '17 */3 * * *'
 
 permissions:
   contents: read
